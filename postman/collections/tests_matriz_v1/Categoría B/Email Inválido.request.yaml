@@ -1,0 +1,43 @@
+$kind: http-request
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_n1_11\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"SEND_EMAIL\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_4521\",\r
+
+    \    \"prioridad\": \"ALTA\"\r
+
+    \  },\r
+
+    \  \"destino\": \"217O00440itsx.edu.mx\",\r
+
+    \  \"asunto\": \"📊 Reporte Semanal Automático: Estado Financiero Q3\",\r
+
+    \  \"body\": \"Estimado Director, adjunto encontrará el resumen consolidado.\",\r
+
+    \  \"cron_expression\": \"0 8 * * 1\",\r
+
+    \  \"adjunto\": {\r
+
+    \    \"tipo\": \"POWERPOINT\",\r
+
+    \    \"slides\": []\r
+
+    \  }\r
+
+    }"
+auth:
+  type: noauth
+order: 3000

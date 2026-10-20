@@ -1,0 +1,115 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "test_matriz_v1",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://195.26.242.120:8000"
+    },
+    {
+      "url": ""
+    }
+  ],
+  "paths": {
+    "/v1/tasks/dispatch": {
+      "post": {
+        "summary": "SEND_EMAIL Estándar",
+        "responses": {},
+        "tags": [
+          "Categoría A"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transaccion_id": {
+                    "type": "string"
+                  },
+                  "tenant_id": {
+                    "type": "string"
+                  },
+                  "accion": {
+                    "type": "string"
+                  },
+                  "callback_url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "meta": {
+                    "type": "object",
+                    "properties": {
+                      "usuario_id": {
+                        "type": "string"
+                      },
+                      "prioridad": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "destino": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "asunto": {
+                    "type": "string",
+                    "format": "style"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "cron_expression": {
+                    "type": "string"
+                  },
+                  "adjunto": {
+                    "type": "object",
+                    "properties": {
+                      "tipo": {
+                        "type": "string"
+                      },
+                      "slides": {
+                        "type": "array",
+                        "items": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "transaccion_id": "tx_p1_01",
+                "tenant_id": "empresa123",
+                "accion": "SEND_EMAIL",
+                "callback_url": "http://195.26.242.120:8000/v1/callbacks/n8n",
+                "meta": {
+                  "usuario_id": "usr_4521",
+                  "prioridad": "ALTA"
+                },
+                "destino": "217O00440@itsx.edu.mx",
+                "asunto": "📊 Reporte Semanal Automático: Estado Financiero Q3",
+                "body": "Estimado Director, adjunto encontrará el resumen consolidado.",
+                "cron_expression": "0 8 * * 1",
+                "adjunto": {
+                  "tipo": "POWERPOINT",
+                  "slides": []
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "post": {
+        "summary": "Multicanal Simultáneo",
+        "responses": {},
+        "tags": [
+          "Categoría A"
+        ]
+      }
+    }
+  }
+}

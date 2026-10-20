@@ -1,0 +1,30 @@
+$kind: http-request
+name: "Callback status: NO_EXITO"
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_o1_39\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"SEND_WHATSAPP\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_gerente_inventarios\",\r
+
+    \    \"prioridad\": \"alto\"\r
+
+    \  },\r
+
+    \  \"num_tel\": \"+520000000000\",\r
+
+    \  \"mensaje\": \"Error\"\r
+
+    }"
+order: 5000

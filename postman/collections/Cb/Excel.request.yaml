@@ -1,0 +1,83 @@
+$kind: http-request
+url: http://localhost:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"contenido\": \"archivoExcel\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"info\": {\r
+
+    \    \"nombre_archivo\": \"reporte.xlsx\",\r
+
+    \    \"hoja\": \"Datos\",\r
+
+    \    \"datos\": [\r
+
+    \      {\r
+
+    \        \"nombre\": \"Juan\",\r
+
+    \        \"edad\": 30,\r
+
+    \        \"direccion\": {\r
+
+    \          \"calle\": \"Av. Principal\",\r
+
+    \          \"numero\": 123,\r
+
+    \          \"ciudad\": \"Xalapa\"\r
+
+    \        }\r
+
+    \      },\r
+
+    \      {\r
+
+    \        \"nombre\": \"Ana\",\r
+
+    \        \"edad\": 25,\r
+
+    \        \"direccion\": {\r
+
+    \          \"calle\": \"Calle Centro\",\r
+
+    \          \"numero\": 456,\r
+
+    \          \"ciudad\": \"Veracruz\"\r
+
+    \        }\r
+
+    \      }\r
+
+    \    ]\r
+
+    \  }\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "const requestBody = pm.request.body.raw;\r
+
+      const jsonData = JSON.parse(requestBody);\r
+
+      const secretKey = \"Test_217O00440\";\r
+
+      const minifiedBody = JSON.stringify(jsonData);\r
+
+      const hash = CryptoJS.HmacSHA256(minifiedBody, secretKey);\r
+
+      const hmacSignature = hash.toString(CryptoJS.enc.Hex);\r
+
+      pm.request.headers.add({\r
+
+      \    key: 'X-Signature-256',\r
+
+      \    value: hmacSignature\r
+
+      });"
+    language: text/javascript
+order: 2000

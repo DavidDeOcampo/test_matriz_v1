@@ -1,0 +1,12 @@
+$kind: http-request
+description: |-
+  docker compose exec redis ls -la /data  
+  docker compose restart redis celery
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: text
+  content: "docker compose exec redis ls -la /data\r
+
+    docker compose restart redis celery"
+order: 8000

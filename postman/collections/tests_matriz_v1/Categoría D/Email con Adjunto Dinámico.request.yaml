@@ -1,0 +1,69 @@
+$kind: http-request
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_c1_28\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"SEND_EMAIL\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_4521\",\r
+
+    \    \"prioridad\": \"ALTA\"\r
+
+    \  },\r
+
+    \  \"destino\": \"217O00440@itsx.edu.mx\",\r
+
+    \  \"asunto\": \"📊 Reporte Semanal Automático: Estado Financiero Q3 (PDF Adjunto)\",\r
+
+    \  \"body\": \"Estimado Director, adjunto encontrará el corte financiero recién generado en formato PDF.\",\r
+
+    \  \"adjunto\": {\r
+
+    \    \"tipo\": \"PDF\",\r
+
+    \    \"nombre_archivo\": \"Estado_Financiero_Q3.pdf\",\r
+
+    \    \"titulo_documento\": \"Estado Financiero Consolidado Q3 - 2026\",\r
+
+    \    \"datos\": [\r
+
+    \      {\r
+
+    \        \"concepto\": \"Ingresos Brutos\",\r
+
+    \        \"monto\": 1050000.00\r
+
+    \      },\r
+
+    \      {\r
+
+    \        \"concepto\": \"Costos Operativos\",\r
+
+    \        \"monto\": 580000.00\r
+
+    \      },\r
+
+    \      {\r
+
+    \        \"concepto\": \"Margen Neto\",\r
+
+    \        \"monto\": 470000.00\r
+
+    \      }\r
+
+    \    ]\r
+
+    \  }\r
+
+    }"
+order: 4000

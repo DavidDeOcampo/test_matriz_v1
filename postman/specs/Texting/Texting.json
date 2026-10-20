@@ -1,0 +1,173 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Texting",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/v1/tasks/dispatch": {
+      "post": {
+        "summary": "SEND_EMAIL Estándar",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "transaccion_id": {
+                  "type": "string"
+                },
+                "tenant_id": {
+                  "type": "string"
+                },
+                "accion": {
+                  "type": "string"
+                },
+                "callback_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "usuario_id": {
+                      "type": "string"
+                    },
+                    "prioridad": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "destino": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "asunto": {
+                  "type": "string",
+                  "format": "style"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "cron_expression": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {},
+        "tags": [
+          "Categoría A"
+        ]
+      }
+    },
+    "/": {
+      "post": {
+        "summary": "Multicanal Simultáneo",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {},
+        "tags": [
+          "Categoría A"
+        ]
+      }
+    },
+    "/webhook/api": {
+      "post": {
+        "summary": "Sin Encabezado HMAC",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "transaccion_id": {
+                  "type": "string"
+                },
+                "tenant_id": {
+                  "type": "string"
+                },
+                "accion": {
+                  "type": "string"
+                },
+                "callback_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "usuario_id": {
+                      "type": "string"
+                    },
+                    "prioridad": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "destino": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "asunto": {
+                  "type": "string",
+                  "format": "style"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "cron_expression": {
+                  "type": "string"
+                },
+                "adjunto": {
+                  "type": "object",
+                  "properties": {
+                    "tipo": {
+                      "type": "string"
+                    },
+                    "slides": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {},
+        "tags": [
+          "Categoría C"
+        ]
+      }
+    },
+    "/metrics": {
+      "post": {
+        "summary": "Alerta de Memoria en Redis",
+        "description": "docker compose exec redis sh -c 'for i in $(seq 1 70); do redis-cli SET \"basura:$i\" \"$(head -c 1000000 /dev/zero | tr \"\\\\0\" \"A\")\" > /dev/null; echo \"Inyectando mega $i...\"; done'\n\ncurl -s [http://localhost:9121/metrics](http://localhost:9121/metrics) | grep -E \"redis_memory_used_bytes|redis_memory_max_bytes\"",
+        "consumes": [
+          "application/json"
+        ],
+        "responses": {},
+        "tags": [
+          "Categoría E"
+        ]
+      }
+    }
+  },
+  "host": "195.26.242.120:8000",
+  "schemes": [
+    "http"
+  ]
+}

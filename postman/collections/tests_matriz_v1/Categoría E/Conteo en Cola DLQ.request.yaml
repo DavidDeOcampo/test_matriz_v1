@@ -1,0 +1,8 @@
+$kind: http-request
+description: docker compose exec redis redis-cli LLEN dlq
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: ""
+order: 2000

@@ -1,0 +1,8 @@
+$kind: http-request
+description: |-
+  docker compose exec redis sh -c 'for i in $(seq 1 70); do redis-cli SET "basura:$i" "$(head -c 1000000 /dev/zero | tr "\\0" "A")" > /dev/null; echo "Inyectando mega $i..."; done'
+
+  curl -s [http://localhost:9121/metrics](http://localhost:9121/metrics) | grep -E "redis_memory_used_bytes|redis_memory_max_bytes"
+url: http://195.26.242.120:9121/metrics
+method: POST
+order: 7000

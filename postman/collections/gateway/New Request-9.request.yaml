@@ -1,0 +1,202 @@
+$kind: http-request
+name: New Request
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_c1_26\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"GENERATE_PPTX\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_4521\",\r
+
+    \    \"prioridad\": \"ALTA\"\r
+
+    \  },\r
+
+    \  \"requiere_certificacion\": true,\r
+
+    \  \"datos_certificacion\": {\r
+
+    \    \"solicitado_por\": \"Carlos Gómez (Gerente)\",\r
+
+    \    \"ip_origen\": \"192.168.1.50\",\r
+
+    \    \"timestamp_extraccion\": \"2026-10-04T10:30:00Z\"\r
+
+    \  },\r
+
+    \  \"presentation_title\": \"Reporte Anual de Resultados\",\r
+
+    \  \"slides\": [\r
+
+    \    {\"slide_type\": \"title_slide\", \"title\": \"Resultados Q3 2026\", \"subtitle\": \"Resumen Ejecutivo\"},\r
+
+    \    {\"slide_type\": \"content_slide\",\"title\": \"Objetivos del Trimestre\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"Aumentar la cuota de mercado en un 5%\",\r
+
+    \        \"Reducir costes operativos en un 10%\",\r
+
+    \        \"Lanzar el nuevo producto V2.0\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_type\": \"content_slide\",\r
+
+    \      \"title\": \"Hitos Alcanzados\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"Lanzamiento de V2.0 completado antes de lo previsto\",\r
+
+    \        \"Apertura de dos nuevas sucursales\",\r
+
+    \        \"Contratación del nuevo equipo de ventas\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_type\": \"content_slide\",\r
+
+    \      \"title\": \"Desafíos\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"Retrasos en la cadena de suministro\",\r
+
+    \        \"Aumento de los costes de las materias primas\",\r
+
+    \        \"Alta rotación en el departamento de soporte\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_type\": \"content_slide\",\r
+
+    \      \"title\": \"Métricas Clave\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"Ingresos: $1.2M (+8% YoY)\",\r
+
+    \        \"Nuevos usuarios: 15,000\",\r
+
+    \        \"Satisfacción del cliente: 92%\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_type\": \"content_slide\",\r
+
+    \      \"title\": \"Análisis de la Competencia\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"Competidor A lanzó una nueva campaña agresiva\",\r
+
+    \        \"Competidor B experimentó problemas de servicio\",\r
+
+    \        \"Nuestra cuota de mercado se mantiene estable\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_type\": \"content_slide\",\r
+
+    \      \"title\": \"Plan de Acción - Q4\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"Aumentar la inversión en marketing digital\",\r
+
+    \        \"Optimizar el proceso de atención al cliente\",\r
+
+    \        \"Iniciar el desarrollo de la versión 3.0\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_type\": \"content_slide\",\r
+
+    \      \"title\": \"Presupuesto\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"Presupuesto aprobado: $500,000\",\r
+
+    \        \"Gasto estimado: $450,000\",\r
+
+    \        \"Ahorro proyectado: $50,000\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_type\": \"content_slide\",\r
+
+    \      \"title\": \"Riesgos y Mitigaciones\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"Riesgo: Fluctuaciones monetarias. Mitigación: Coberturas financieras.\",\r
+
+    \        \"Riesgo: Cambios regulatorios. Mitigación: Asesoría legal continua.\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_type\": \"content_slide\",\r
+
+    \      \"title\": \"Conclusión\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"El trimestre ha sido exitoso en general.\",\r
+
+    \        \"Estamos bien posicionados para el resto del año.\",\r
+
+    \        \"Gracias a todo el equipo por su esfuerzo.\"\r
+
+    \      ]\r
+
+    \    }\r
+
+    \  ]\r
+
+    }"
+order: 12000

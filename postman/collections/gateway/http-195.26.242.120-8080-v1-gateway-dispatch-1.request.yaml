@@ -1,0 +1,45 @@
+$kind: http-request
+name: http://195.26.242.120:8080/v1/gateway/dispatch
+description: ""
+url: http://195.26.242.120:8080/v1/gateway/dispatch
+method: POST
+body:
+  type: json
+  content: "  {\r
+
+    \  \"transaccion_id\": \"tx_20261004_102\",\r
+
+    \  \"tenant_id\": \"Empresa123\",\r
+
+    \  \"accion\": \"SEND_WHATSAPP\",\r
+
+    \  \"callback_url\": \"https://api.tu-saas.com/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_gerente_inventarios\",\r
+
+    \    \"prioridad\": \"CRITICA\"\r
+
+    \  },\r
+
+    \  \"num_tel\": \"+5212281256261\",\r
+
+    \  \"mensaje\": \"⚠️ ALERTA DE INVENTARIO: El producto 'Aceite Multigrado 20W50' en Sucursal 3 ha caído a 4 unidades.\",\r
+
+    \  \"detalles_alerta\": {\r
+
+    \    \"tipo_regla\": \"STOCK_MINIMO\",\r
+
+    \    \"sucursal_id\": 3,\r
+
+    \    \"producto_id\": \"PROD-9982\"\r
+
+    \  }\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_0o62}}"
+order: 1000

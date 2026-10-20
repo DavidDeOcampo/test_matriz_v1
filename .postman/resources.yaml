@@ -1,0 +1,14 @@
+workspace:
+  id: 51dbce1d-57a5-4b72-88ae-63fc01a7238f
+localResources:
+  specs:
+    - ../postman/specs/test_matriz_v1/test_matriz_v1.json
+    - ../postman/specs/Export/Export.json
+    - ../postman/specs/Test_matriz_V1-1/Test_matriz_V1-1.json
+    - ../postman/specs/Texting/Texting.json
+resourceNameMappings:
+  specs:
+    - ../postman/specs/test_matriz_v1/test_matriz_v1.json: test_matriz_v1
+    - ../postman/specs/Export/Export.json: Export
+    - ../postman/specs/Test_matriz_V1-1/Test_matriz_V1-1.json: Test_matriz_V1
+    - ../postman/specs/Texting/Texting.json: Texting

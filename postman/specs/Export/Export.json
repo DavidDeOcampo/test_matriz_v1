@@ -1,0 +1,197 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Export",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "http://195.26.242.120:8000"
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": "http://195.26.242.120:5678"
+    }
+  ],
+  "paths": {
+    "/v1/tasks/dispatch": {
+      "post": {
+        "summary": "SEND_EMAIL Estándar",
+        "responses": {},
+        "tags": [
+          "Categoría A"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transaccion_id": {
+                    "type": "string"
+                  },
+                  "tenant_id": {
+                    "type": "string"
+                  },
+                  "accion": {
+                    "type": "string"
+                  },
+                  "callback_url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "meta": {
+                    "type": "object",
+                    "properties": {
+                      "usuario_id": {
+                        "type": "string"
+                      },
+                      "prioridad": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "destino": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "asunto": {
+                    "type": "string",
+                    "format": "style"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "cron_expression": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "transaccion_id": "tx_p1_01",
+                "tenant_id": "empresa123",
+                "accion": "SEND_EMAIL",
+                "callback_url": "http://195.26.242.120:8000/v1/callbacks/n8n",
+                "meta": {
+                  "usuario_id": "usr_4521",
+                  "prioridad": "ALTA"
+                },
+                "destino": "217O00440@itsx.edu.mx",
+                "asunto": "📊 Reporte Semanal Automático: Estado Financiero Q3",
+                "body": "Estimado Director. Me comunico a usted para saber los datos sobre el Reporte semanal",
+                "cron_expression": "0 8 * * 1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "post": {
+        "summary": "Multicanal Simultáneo",
+        "responses": {},
+        "tags": [
+          "Categoría A"
+        ]
+      },
+      "get": {
+        "summary": "New Request",
+        "responses": {},
+        "tags": [
+          "Categoría E"
+        ]
+      }
+    },
+    "/webhook/api": {
+      "post": {
+        "summary": "Sin Encabezado HMAC",
+        "responses": {},
+        "tags": [
+          "Categoría C"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transaccion_id": {
+                    "type": "string"
+                  },
+                  "tenant_id": {
+                    "type": "string"
+                  },
+                  "accion": {
+                    "type": "string"
+                  },
+                  "callback_url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "meta": {
+                    "type": "object",
+                    "properties": {
+                      "usuario_id": {
+                        "type": "string"
+                      },
+                      "prioridad": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "destino": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "asunto": {
+                    "type": "string",
+                    "format": "style"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "cron_expression": {
+                    "type": "string"
+                  },
+                  "adjunto": {
+                    "type": "object",
+                    "properties": {
+                      "tipo": {
+                        "type": "string"
+                      },
+                      "slides": {
+                        "type": "array",
+                        "items": {}
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "transaccion_id": "tx_s1_17",
+                "tenant_id": "empresa123",
+                "accion": "SEND_EMAIL",
+                "callback_url": "http://195.26.242.120:8000/v1/callbacks/n8n",
+                "meta": {
+                  "usuario_id": "usr_4521",
+                  "prioridad": "ALTA"
+                },
+                "destino": "217O00440@itsx.edu.mx",
+                "asunto": "📊 Reporte Semanal Automático: Estado Financiero Q3",
+                "body": "Estimado Director, adjunto encontrará el resumen consolidado.",
+                "cron_expression": "0 8 * * 1",
+                "adjunto": {
+                  "tipo": "POWERPOINT",
+                  "slides": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

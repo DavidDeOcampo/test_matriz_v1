@@ -1,0 +1,227 @@
+$kind: http-request
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_c1_27\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"GENERATE_PPTX\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_4521\",\r
+
+    \    \"prioridad\": \"ALTA\"\r
+
+    \  },\r
+
+    \  \"requiere_certificacion\": true,\r
+
+    \  \"datos_certificacion\": {\r
+
+    \    \"solicitado_por\": \"Carlos Gómez (Gerente)\",\r
+
+    \    \"ip_origen\": \"192.168.1.50\",\r
+
+    \    \"timestamp_extraccion\": \"2026-10-04T10:30:00Z\"\r
+
+    \  },\r
+
+    \  \"presentation_title\": \"Auditoría de Gastos Operativos - Gráficos Complejos\",\r
+
+    \  \"slides\": [\r
+
+    \    {\r
+
+    \      \"slide_number\": 1,\r
+
+    \      \"slide_type\": \"title_slide\",\r
+
+    \      \"title\": \"Reporte Ejecutivo Q3\",\r
+
+    \      \"subtitle\": \"CB Informática\"\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_number\": 2,\r
+
+    \      \"layout\": \"advanced_chart\",\r
+
+    \      \"title\": \"Comparativa de Rendimiento Operativo por Trimestre\",\r
+
+    \      \"chart_config\": {\r
+
+    \        \"chart_type\": \"clustered_bar\",\r
+
+    \        \"title\": \"Ingresos vs Costos por Trimestre (USD)\",\r
+
+    \        \"legend_position\": \"bottom\",\r
+
+    \        \"show_values_on_bars\": true,\r
+
+    \        \"x_axis\": {\r
+
+    \          \"title\": \"Trimestres 2026\",\r
+
+    \          \"categories\": [\"Q1\", \"Q2\", \"Q3\", \"Q4\"]\r
+
+    \        },\r
+
+    \        \"y_axis\": {\r
+
+    \          \"title\": \"Monto en Miles ($)\",\r
+
+    \          \"min_value\": 0,\r
+
+    \          \"max_value\": 1200\r
+
+    \        },\r
+
+    \        \"series\": [\r
+
+    \          {\r
+
+    \            \"name\": \"Ingresos Brutos\",\r
+
+    \            \"color_hex\": \"#1F77B4\",\r
+
+    \            \"values\": [850, 920, 1050, 1150]\r
+
+    \          },\r
+
+    \          {\r
+
+    \            \"name\": \"Costos Operativos\",\r
+
+    \            \"color_hex\": \"#FF7F0E\",\r
+
+    \            \"values\": [500, 530, 580, 600]\r
+
+    \          },\r
+
+    \          {\r
+
+    \            \"name\": \"Margen Neto\",\r
+
+    \            \"color_hex\": \"#2CA02C\",\r
+
+    \            \"values\": [350, 390, 470, 550]\r
+
+    \          }\r
+
+    \        ]\r
+
+    \      },\r
+
+    \      \"takeaways\": [\r
+
+    \        \"El margen neto creció un 57% desde Q1 a Q4 gracias al control de costos.\",\r
+
+    \        \"Q4 representa el pico histórico de ingresos brutos.\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_number\": 3,\r
+
+    \      \"layout\": \"advanced_chart\",\r
+
+    \      \"title\": \"Evolución de Retención y Conversión de Usuarios\",\r
+
+    \      \"chart_config\": {\r
+
+    \        \"chart_type\": \"line_polygon\",\r
+
+    \        \"title\": \"Tasa de Conversión vs Retención Mensual (%)\",\r
+
+    \        \"smooth_lines\": true,\r
+
+    \        \"show_markers\": true,\r
+
+    \        \"legend_position\": \"right\",\r
+
+    \        \"x_axis\": {\r
+
+    \          \"title\": \"Meses del Año\",\r
+
+    \          \"categories\": [\"Ene\", \"Feb\", \"Mar\", \"Abr\", \"May\", \"Jun\"]\r
+
+    \        },\r
+
+    \        \"y_axis\": {\r
+
+    \          \"title\": \"Porcentaje (%)\",\r
+
+    \          \"min_value\": 0,\r
+
+    \          \"max_value\": 100\r
+
+    \        },\r
+
+    \        \"series\": [\r
+
+    \          {\r
+
+    \            \"name\": \"Retención M1\",\r
+
+    \            \"line_style\": \"solid\",\r
+
+    \            \"color_hex\": \"#4B0082\",\r
+
+    \            \"values\": [65.4, 68.1, 70.5, 71.2, 75.0, 78.3]\r
+
+    \          },\r
+
+    \          {\r
+
+    \            \"name\": \"Conversión Lead-to-Paid\",\r
+
+    \            \"line_style\": \"solid\",\r
+
+    \            \"color_hex\": \"#008080\",\r
+
+    \            \"values\": [12.1, 13.5, 12.8, 15.4, 18.2, 21.0]\r
+
+    \          },\r
+
+    \          {\r
+
+    \            \"name\": \"Target Anual\",\r
+
+    \            \"line_style\": \"dashed\",\r
+
+    \            \"color_hex\": \"#D62728\",\r
+
+    \            \"values\": [15.0, 15.0, 15.0, 15.0, 15.0, 15.0]\r
+
+    \          }\r
+
+    \        ]\r
+
+    \      },\r
+
+    \      \"takeaways\": [\r
+
+    \        \"La tasa de conversión superó el target anual del 15% a partir de Abril.\",\r
+
+    \        \"La retención M1 mantiene una tendencia positiva constante alcanzando el 78.3% en Junio.\"\r
+
+    \      ]\r
+
+    \    }\r
+
+    \  ]\r
+
+    }"
+order: 3000

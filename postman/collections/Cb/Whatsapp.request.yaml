@@ -1,0 +1,39 @@
+$kind: http-request
+url: http://localhost:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"contenido\": \"whatsapp\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"num_tel\": \"+5212281256261\",\r
+
+    \  \"mensaje\": \"Hola, este es un mensaje de WhatsApp.\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "const requestBody = pm.request.body.raw;\r
+
+      const jsonData = JSON.parse(requestBody);\r
+
+      const secretKey = \"Test_217O00440\";\r
+
+      const minifiedBody = JSON.stringify(jsonData);\r
+
+      const hash = CryptoJS.HmacSHA256(minifiedBody, secretKey);\r
+
+      const hmacSignature = hash.toString(CryptoJS.enc.Hex);\r
+
+      pm.request.headers.add({\r
+
+      \    key: 'X-Signature-256',\r
+
+      \    value: hmacSignature\r
+
+      });"
+    language: text/javascript
+order: 3730

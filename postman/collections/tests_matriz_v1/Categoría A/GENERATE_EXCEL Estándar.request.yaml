@@ -1,0 +1,37 @@
+$kind: http-request
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_p1_03\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"GENERATE_EXCEL\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_4521\",\r
+
+    \    \"prioridad\": \"MEDIA\"\r
+
+    \  },\r
+
+    \  \"nombre_archivo_sugerido\": \"Ventas_Agosto_Sucursal5\",\r
+
+    \  \"solicitar_envio_correo\": false,\r
+
+    \  \"datos\": [\r
+
+    \    {\"fecha\": \"2026-08-01\", \"folio\": \"F-1021\", \"cliente\": \"Refaccionaria del Norte\", \"total_monto\": 14500.00},\r
+
+    \    {\"fecha\": \"2026-08-05\", \"folio\": \"F-1035\", \"cliente\": \"Taller Mecánico Central\", \"total_monto\": 8200.50}\r
+
+    \  ]\r
+
+    }"
+order: 2000

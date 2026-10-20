@@ -1,0 +1,95 @@
+$kind: http-request
+url: http://localhost:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"tenant_id\": \"Empresa123\",\r
+
+    \  \"contenido\": \"powerpoint\",\r
+
+    \  \"info\":{\r
+
+    \  \"presentation_title\": \"Conclusiones del Análisis Financiero Q2\",\r
+
+    \  \"slides\": [\r
+
+    \    {\r
+
+    \      \"slide_number\": 1,\r
+
+    \      \"layout\": \"title_and_content\",\r
+
+    \      \"title\": \"Resumen Ejecutivo\",\r
+
+    \      \"bullets\": [\r
+
+    \        \"El crecimiento interanual superó el 15%.\",\r
+
+    \        \"Los costos operativos disminuyeron en un 4%.\"\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"slide_number\": 2,\r
+
+    \      \"layout\": \"chart\",\r
+
+    \      \"title\": \"Distribución de Ingresos por Región\",\r
+
+    \      \"chart_type\": \"bar\",\r
+
+    \      \"chart_data\": {\r
+
+    \        \"categories\": [\"Norteamérica\", \"Europa\", \"LATAM\", \"APAC\"],\r
+
+    \        \"series\": [\r
+
+    \          {\r
+
+    \            \"name\": \"2026\",\r
+
+    \            \"values\": [450, 300, 180, 220]\r
+
+    \          }\r
+
+    \        ]\r
+
+    \      },\r
+
+    \      \"takeaway\": \"LATAM registró el mayor porcentaje de crecimiento respecto al año anterior.\"\r
+
+    \    }\r
+
+    \  ]\r
+
+    }\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "const requestBody = pm.request.body.raw;\r
+
+      const jsonData = JSON.parse(requestBody);\r
+
+      const secretKey = \"Test_217O00440\";\r
+
+      const minifiedBody = JSON.stringify(jsonData);\r
+
+      const hash = CryptoJS.HmacSHA256(minifiedBody, secretKey);\r
+
+      const hmacSignature = hash.toString(CryptoJS.enc.Hex);\r
+
+      pm.request.headers.add({\r
+
+      \    key: 'X-Signature-256',\r
+
+      \    value: hmacSignature\r
+
+      });"
+    language: text/javascript
+order: 5000

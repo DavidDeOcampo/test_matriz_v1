@@ -1,0 +1,43 @@
+$kind: http-request
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_s1_20\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"DB_PERSIST\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"server\": \"cbinformatica.net,1475\",\r
+
+    \    \"data_base\": \"cberp\",\r
+
+    \    \"usuario_id\": \"usr_admin\",\r
+
+    \    \"prioridad\": \"MEDIA\",\r
+
+    \    \"timestamp\": \"2026-10-15T08:00:00Z\"\r
+
+    \  },\r
+
+    \  \"entidad\": \"bitacora_auditoria\",\r
+
+    \  \"registro\": {\r
+
+    \    \"evento\": \"CIERRE_DIARIO\",\r
+
+    \    \"sucursal_id\": 1,\r
+
+    \    \"exitoso\": true\r
+
+    \  }\r
+
+    }"
+order: 4000

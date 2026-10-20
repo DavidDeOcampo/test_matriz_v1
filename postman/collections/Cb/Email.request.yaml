@@ -1,0 +1,43 @@
+$kind: http-request
+url: http://localhost:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"accion\": \"SEND_EMAIL\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"remitente\": \"remitente@empresa.com\",\r
+
+    \  \"destino\": \"destinatario@empresa.com\",\r
+
+    \  \"asunto\": \"Asunto del correo\",\r
+
+    \  \"body\": \"Contenido del correo\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "const requestBody = pm.request.body.raw;\r
+
+      const jsonData = JSON.parse(requestBody);\r
+
+      const secretKey = \"Test_217O00440\";\r
+
+      const minifiedBody = JSON.stringify(jsonData);\r
+
+      const hash = CryptoJS.HmacSHA256(minifiedBody, secretKey);\r
+
+      const hmacSignature = hash.toString(CryptoJS.enc.Hex);\r
+
+      pm.request.headers.add({\r
+
+      \    key: 'X-Signature-256',\r
+
+      \    value: hmacSignature\r
+
+      });"
+    language: text/javascript
+order: 3000

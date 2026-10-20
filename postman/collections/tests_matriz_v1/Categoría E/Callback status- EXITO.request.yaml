@@ -1,0 +1,54 @@
+$kind: http-request
+name: "Callback status: EXITO"
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_O1_36\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"GENERATE_PPTX\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_4521\",\r
+
+    \    \"prioridad\": \"ALTA\"\r
+
+    \  },\r
+
+    \  \"requiere_certificacion\": true,\r
+
+    \  \"datos_certificacion\": {\r
+
+    \    \"solicitado_por\": \"Carlos Gómez (Gerente)\",\r
+
+    \    \"ip_origen\": \"192.168.1.50\",\r
+
+    \    \"timestamp_extraccion\": \"2026-10-04T10:30:00Z\"\r
+
+    \  },\r
+
+    \  \"presentation_title\": \"Auditoría de Gastos Operativos\",\r
+
+    \  \"slides\": [\r
+
+    \    {\r
+
+    \      \"slide_type\": \"title_slide\",\r
+
+    \      \"title\": \"Reporte Q3\",\r
+
+    \      \"subtitle\": \"CB Informática\"\r
+
+    \    }\r
+
+    \  ]\r
+
+    }"
+order: 4000

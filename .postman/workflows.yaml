@@ -1,0 +1,48 @@
+# This is a Workflow metadata file for defining entity relationships in this workspace.
+# Each workflow defines relations between entities and may include optional behavior/settings.
+# The Paths are relative to the .postman directory (avoid absolute paths).
+# Keep relation entries explicit and avoid duplicate pairs within the same workflow.
+# This file is declarative metadata and does not execute workflows by itself.
+workflows:
+  syncSpecToCollection:
+    - spec: ../postman/specs/test_matriz_v1/test_matriz_v1.json
+      collection: ../postman/collections/tests_matriz_v1
+      options:
+        syncExamples: false
+        deleteOrphanedRequests: false
+    - spec: ../postman/specs/Export/Export.json
+      collection: ../postman/collections/tests_matriz_v1
+      options:
+        syncExamples: false
+        deleteOrphanedRequests: false
+    - spec: ../postman/specs/Test_matriz_V1-1/Test_matriz_V1-1.json
+      collection: ../postman/collections/tests_matriz_v1
+      options:
+        syncExamples: false
+        deleteOrphanedRequests: false
+    - spec: ../postman/specs/Texting/Texting.json
+      collection: ../postman/collections/tests_matriz_v1
+      options:
+        syncExamples: false
+        deleteOrphanedRequests: false
+  syncCollectionToSpec:
+    - spec: ../postman/specs/test_matriz_v1/test_matriz_v1.json
+      collection: ../postman/collections/tests_matriz_v1
+      options:
+        syncExamples: false
+        deleteOrphanedRequests: false
+    - spec: ../postman/specs/Export/Export.json
+      collection: ../postman/collections/tests_matriz_v1
+      options:
+        syncExamples: false
+        deleteOrphanedRequests: false
+    - spec: ../postman/specs/Test_matriz_V1-1/Test_matriz_V1-1.json
+      collection: ../postman/collections/tests_matriz_v1
+      options:
+        syncExamples: false
+        deleteOrphanedRequests: false
+    - spec: ../postman/specs/Texting/Texting.json
+      collection: ../postman/collections/tests_matriz_v1
+      options:
+        syncExamples: false
+        deleteOrphanedRequests: false

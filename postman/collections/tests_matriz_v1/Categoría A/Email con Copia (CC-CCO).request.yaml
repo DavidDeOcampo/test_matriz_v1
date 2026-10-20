@@ -1,0 +1,48 @@
+$kind: http-request
+name: Email con Copia (CC/CCO)
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_p1_07\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"SEND_EMAIL\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_4521\",\r
+
+    \    \"prioridad\": \"ALTA\"\r
+
+    \  },\r
+
+    \  \"destino\": \"217O00440@itsx.edu.mx\",\r
+
+    \  \"cc\":[\r
+
+    \    \"moisesyahircalu3312@outlook.es\",\r
+
+    \    \"viofernandez49@gmail.com\"\r
+
+    \  ],\r
+
+    \  \"cco\":[\r
+
+    \    \"chavodel8673@gmail.com\"\r
+
+    \  ],\r
+
+    \  \"asunto\": \"📊 Reporte Semanal Automático: Estado Financiero Q3\",\r
+
+    \  \"body\": \"Estimado Director. Me comunico a usted para saber los datos sobre el Reporte semanal\",\r
+
+    \  \"cron_expression\": \"0 8 * * 1\"\r
+
+    \  }"
+order: 6000

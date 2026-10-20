@@ -1,0 +1,5 @@
+$kind: websocket-request
+description: ""
+url: ws://195.26.242.120:8080/v1/chat/stream
+settings: {}
+order: 4000

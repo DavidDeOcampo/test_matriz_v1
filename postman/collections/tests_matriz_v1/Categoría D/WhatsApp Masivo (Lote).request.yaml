@@ -1,0 +1,81 @@
+$kind: http-request
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_c1_29\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"SEND_WHATSAPP\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_gerente_inventarios\",\r
+
+    \    \"prioridad\": \"ALTA\"\r
+
+    \  },\r
+
+    \  \"num_tel\": [\r
+
+    \    \"+5212281256201\",\r
+
+    \    \"+5212281256202\",\r
+
+    \    \"+5212281256203\",\r
+
+    \    \"+5212281256204\",\r
+
+    \    \"+5212281256205\",\r
+
+    \    \"+5212281256206\",\r
+
+    \    \"+5212281256207\",\r
+
+    \    \"+5212281256208\",\r
+
+    \    \"+5212281256209\",\r
+
+    \    \"+5212281256210\",\r
+
+    \    \"+5212281256211\",\r
+
+    \    \"+5212281256212\",\r
+
+    \    \"+5212281256213\",\r
+
+    \    \"+5212281256214\",\r
+
+    \    \"+5212281256215\",\r
+
+    \    \"+5212281256216\",\r
+
+    \    \"+5212281256217\",\r
+
+    \    \"+5212281256218\",\r
+
+    \    \"+5212281256219\",\r
+
+    \    \"+5212281256220\"\r
+
+    \  ],\r
+
+    \  \"mensaje\": \"⚠️ ALERTA MASIVA DE INVENTARIO: Corte preventivo de almacén programado a las 18:00 hrs.\",\r
+
+    \  \"detalles_alerta\": {\r
+
+    \    \"tipo_regla\": \"NOTIFICACION_MASIVA_LOTE\",\r
+
+    \    \"sucursal_id\": 3,\r
+
+    \    \"total_destinatarios\": 20\r
+
+    \  }\r
+
+    }"
+order: 5000

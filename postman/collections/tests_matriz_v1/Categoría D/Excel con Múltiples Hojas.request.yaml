@@ -1,0 +1,123 @@
+$kind: http-request
+url: http://195.26.242.120:8000/v1/tasks/dispatch
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"transaccion_id\": \"tx_c1_30\",\r
+
+    \  \"tenant_id\": \"empresa123\",\r
+
+    \  \"accion\": \"GENERATE_EXCEL\",\r
+
+    \  \"callback_url\": \"http://195.26.242.120:8000/v1/callbacks/n8n\",\r
+
+    \  \"meta\": {\r
+
+    \    \"usuario_id\": \"usr_4521\",\r
+
+    \    \"prioridad\": \"MEDIA\"\r
+
+    \  },\r
+
+    \  \"nombre_archivo_sugerido\": \"Reporte_Financiero_Agosto\",\r
+
+    \  \"solicitar_envio_correo\": false,\r
+
+    \  \"hojas\": [\r
+
+    \    {\r
+
+    \      \"nombre\": \"Ventas\",\r
+
+    \      \"datos\": [\r
+
+    \        {\r
+
+    \          \"folio\": \"F-1021\",\r
+
+    \          \"cliente\": \"Refaccionaria del Norte\",\r
+
+    \          \"total_monto\": 14500\r
+
+    \        },\r
+
+    \        {\r
+
+    \          \"folio\": \"F-1035\",\r
+
+    \          \"cliente\": \"Taller Mecánico Central\",\r
+
+    \          \"total_monto\": 8200.50\r
+
+    \        }\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"nombre\": \"Costos\",\r
+
+    \      \"datos\": [\r
+
+    \        {\r
+
+    \          \"concepto\": \"Materiales\",\r
+
+    \          \"monto\": 9000\r
+
+    \        },\r
+
+    \        {\r
+
+    \          \"concepto\": \"Transporte\",\r
+
+    \          \"monto\": 2500\r
+
+    \        }\r
+
+    \      ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \      \"nombre\": \"Margen\",\r
+
+    \      \"datos\": [\r
+
+    \        {\r
+
+    \          \"concepto\": \"Ventas totales\",\r
+
+    \          \"monto\": 22700.50\r
+
+    \        },\r
+
+    \        {\r
+
+    \          \"concepto\": \"Costos totales\",\r
+
+    \          \"monto\": 11500\r
+
+    \        },\r
+
+    \        {\r
+
+    \          \"concepto\": \"Margen\",\r
+
+    \          \"monto\": 11200.50\r
+
+    \        }\r
+
+    \      ]\r
+
+    \    }\r
+
+    \  ]\r
+
+    }"
+order: 6000
