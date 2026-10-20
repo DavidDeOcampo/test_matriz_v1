@@ -1,12 +1,11 @@
 $kind: http-request
-name: New Request
 url: http://195.26.242.120:8000/v1/tasks/dispatch
 method: POST
 body:
   type: json
   content: "{\r
 
-    \  \"transaccion_id\": \"tx_p1_05\",\r
+    \  \"transaccion_id\": \"Tx_o1_34_01\",\r
 
     \  \"tenant_id\": \"empresa123\",\r
 

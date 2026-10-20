@@ -6,7 +6,7 @@ body:
   type: json
   content: "{\r
 
-    \  \"transaccion_id\": \"tx_p1_04\",\r
+    \  \"transaccion_id\": \"Tx_o1_33_05\",\r
 
     \  \"tenant_id\": \"empresa123\",\r
 
@@ -34,27 +34,23 @@ body:
 
     \  },\r
 
-    \  \"presentation_title\": \"Auditoría de Gastos Operativos\",\r
+    \  \"presentation_title\": \"Reporte Anual de Resultados\",\r
 
     \  \"slides\": [\r
 
-    \    {\r
+    \    {\"slide_type\": \"title_slide\", \"title\": \"Resultados Q3 2026\", \"subtitle\": \"Resumen Ejecutivo\"},\r
 
-    \      \"slide_type\": \"title_slide\",\r
+    \    {\"slide_type\": \"content_slide\",\"title\": \"Objetivos del Trimestre\",\r
 
-    \      \"title\": \"Reporte Q3\",\r
+    \      \"bullets\": [\r
 
-    \      \"subtitle\": \"CB Informática\"\r
+    \        \"Aumentar la cuota de mercado en un 5%\",\r
 
-    \    },\r
+    \        \"Reducir costes operativos en un 10%\",\r
 
-    \    {\r
+    \        \"Lanzar el nuevo producto V2.0\"\r
 
-    \      \"slide_type\": \"title_slide\",\r
-
-    \      \"title\": \"Reporte Q3\",\r
-
-    \      \"subtitle\": \"CB Informática\"\r
+    \      ]\r
 
     \    }\r
 

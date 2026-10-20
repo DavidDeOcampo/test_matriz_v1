@@ -6,7 +6,7 @@ body:
   type: json
   content: "{\r
 
-    \  \"transaccion_id\": \"tx_O1_36\",\r
+    \  \"transaccion_id\": \"Tx_o1_37\",\r
 
     \  \"tenant_id\": \"empresa123\",\r
 
@@ -28,9 +28,7 @@ body:
 
     \    \"solicitado_por\": \"Carlos Gómez (Gerente)\",\r
 
-    \    \"ip_origen\": \"192.168.1.50\",\r
-
-    \    \"timestamp_extraccion\": \"2026-10-04T10:30:00Z\"\r
+    \    \"ip_origen\": \"192.168.1.50\"\r
 
     \  },\r
 

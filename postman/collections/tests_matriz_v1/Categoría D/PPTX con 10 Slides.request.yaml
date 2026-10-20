@@ -5,7 +5,7 @@ body:
   type: json
   content: "{\r
 
-    \  \"transaccion_id\": \"tx_c1_26\",\r
+    \  \"transaccion_id\": \"TX_c1_26\",\r
 
     \  \"tenant_id\": \"empresa123\",\r
 

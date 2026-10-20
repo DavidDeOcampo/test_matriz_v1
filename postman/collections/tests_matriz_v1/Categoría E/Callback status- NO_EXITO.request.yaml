@@ -1,12 +1,12 @@
 $kind: http-request
 name: "Callback status: NO_EXITO"
-url: http://195.26.242.120:8000/v1/tasks/dispatch
+url: http://195.26.242.120:8000/v1/callbacks/n8n
 method: POST
 body:
   type: json
   content: "{\r
 
-    \  \"transaccion_id\": \"tx_o1_39\",\r
+    \  \"transaccion_id\": \"Tx_o1_38\",\r
 
     \  \"tenant_id\": \"empresa123\",\r
 
@@ -18,13 +18,23 @@ body:
 
     \    \"usuario_id\": \"usr_gerente_inventarios\",\r
 
-    \    \"prioridad\": \"alto\"\r
+    \    \"prioridad\": \"Critica\"\r
 
     \  },\r
 
-    \  \"num_tel\": \"+520000000000\",\r
+    \  \"num_tel\": \"000000000000\",\r
 
-    \  \"mensaje\": \"Error\"\r
+    \  \"mensaje\": \"ALERTA DE INVENTARIO: El producto 'Aceite Multigrado 20W50' en Sucursal 3 ha caído a 4 unidades.\",\r
+
+    \  \"detalles_alerta\": {\r
+
+    \    \"tipo_regla\": \"STOCK_MINIMO\",\r
+
+    \    \"sucursal_id\": 3,\r
+
+    \    \"producto_id\": \"PROD-9982\"\r
+
+    \  }\r
 
     }"
 order: 5000

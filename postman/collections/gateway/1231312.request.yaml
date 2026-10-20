@@ -1,5 +1,4 @@
 $kind: http-request
-name: New Request
 url: http://195.26.242.120:8080/v1/gateway/dispatch
 method: POST
 body:
